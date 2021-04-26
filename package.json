@@ -1,0 +1,19 @@
+{
+  "name": "ssc-signal-sample",
+  "version": "1.0.0",
+  "description": "SecurityScorecard Sample APP(Signal)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gonzavz/ssc-signal-sample.git"
+  },
+  "author": "Gonzalo Valdez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gonzavz/ssc-signal-sample/issues"
+  },
+  "homepage": "https://github.com/gonzavz/ssc-signal-sample#readme"
+}

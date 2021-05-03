@@ -1,7 +1,8 @@
-const httpStatus = require('http-status');
-const {APIError} = require('../utils/error');
+import {NextFunction, Request, Response} from 'express';
+import httpStatus from 'http-status';
+import {APIError} from '../utils/error';
 
-const apiErrorHandler = (err, req, res, next) => {
+const apiErrorHandler = (err: any, _req: Request, res: Response, next: NextFunction) => {
   /*
     delegate to the default Express error handler,
     when the headers have already been sent to the client.
@@ -23,9 +24,9 @@ const apiErrorHandler = (err, req, res, next) => {
   return res.status(err.status).json(response);
 };
 
-const parseToAPIError = (err, req, res, next) => {
+const parseToAPIError = (err: any, _req: Request, _res: Response, next: NextFunction) => {
   let parsedError = err;
-  if (!err instanceof APIError) {
+  if (!(err instanceof APIError)) {
     parsedError = new APIError({
       message: err.message,
       status: err.status,
@@ -34,11 +35,11 @@ const parseToAPIError = (err, req, res, next) => {
   next(parsedError);
 };
 
-const notFound = (req, res, next) => {
+const notFound = (_req: Request, _res: Response, next: NextFunction) => {
   next(new APIError({message: 'Resource not found', status: httpStatus.NOT_FOUND}));
 };
 
-module.exports = {
+export {
   apiErrorHandler,
   notFound,
   parseToAPIError,

@@ -1,0 +1,23 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "curly": [true, "ignore-same-line"],
+        "no-unused-expression": [false, "allow-fast-null-checks"],
+        "no-floating-promises": true,
+        "max-classes-per-file": false,
+        "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+        "max-line-length": [true, {
+            "limit": 110
+        }],
+        "variable-name": [true, "check-format", "allow-leading-underscore"],
+        "no-empty-interface": false,
+        "whitespace": [false, "check-operator"],
+        "ordered-imports": true,
+        "indent": [true, "spaces", 2]
+    },
+    "rulesDirectory": []
+}

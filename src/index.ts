@@ -1,7 +1,8 @@
-const configs = require('./configs');
-const app = require('./app');
+import app from './app';
+import ConfigLoader from './configs';
 
 // listen to requests
+const configs = ConfigLoader();
 const message = `server started on port ${configs.port} (${configs.env})`;
 app.listen(configs.port, () => console.log(message));
 

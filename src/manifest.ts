@@ -1,5 +1,6 @@
 /* eslint-disable max-len*/
-module.exports = {
+
+export default {
   'name': 'Sample App (Signal)',
   'url': '<canonical url where this json can be obtained from',
   'description': 'Sample app to test signals',

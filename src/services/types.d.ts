@@ -25,6 +25,11 @@ enum Factors {
   HACKER_CHATTER='hacker_chatter'
 }
 
+enum Severity {
+  INFO = 'info',
+  POSITIVE = 'positive'
+}
+
 interface IReference {
   link: string,
   text: string
@@ -33,7 +38,7 @@ interface IReference {
 interface ISSCSignal {
   id: string,
   name: string,
-  severity: 'info' | 'positive',
+  severity: Severity,
   factor: Factors,
   long_description: string,
   recommendation: string,

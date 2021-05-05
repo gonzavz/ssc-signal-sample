@@ -10,7 +10,7 @@ export class APIError extends Error {
   public errors:any;
   public status:number;
   constructor(config: IAPIErrorConfig) {
-    super(message);
+    super(config.message);
     this.message = config.message;
     this.errors = config.errors || [];
     this.status = config.status || httpStatus.INTERNAL_SERVER_ERROR;

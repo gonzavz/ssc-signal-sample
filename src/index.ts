@@ -1,17 +1,18 @@
 import ConfigLoader from './configs';
 import SecurityScorecard from './libs/ssc';
-import manifest from './manifest';
 import {Service} from './service';
+import manifest from './manifest';
 import {ManifestService} from './services/manifest';
 import {SSCApiService} from './services/ssc_api';
+import {SSCManifest} from './libs/ssc_manifest';
 
-// listen to requests
+// load configs from env
 const configs = ConfigLoader();
 
 const securityScorecard = new SecurityScorecard({token: configs.sscToken});
 
 const sscApiService = new SSCApiService(securityScorecard);
-const manifestService = new ManifestService({manifest});
+const manifestService = new ManifestService({manifest: SSCManifest.fromJSON(manifest)});
 
 const service = new Service({port: configs.port, sscApiService, manifestService});
 
